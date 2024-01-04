@@ -9,5 +9,12 @@ services:
       - ./:/app
       - /app/node_modules           # anomious volume
     environment:
-      - NODE_ENV=development"
-    command: node index.js
+      - NODE_ENV=development
+      - MONGO_USER=Dhimeji
+      - MONGO_PASSWORD=mypassword
+    command:  npm run dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=Dhimeji
+      - MONGO_INITDB_ROOT_PASSWORD=mypassword
+      
