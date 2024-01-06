@@ -7,7 +7,8 @@ const {
   MONGO_PORT,
 } = require("./config/config");
 
-const postRouter = require("./routes/postRoutes")
+const postRouter = require("./routes/postRoutes");
+const userRouter = require("./routes/userRoutes");
 
 const app = express();
 
@@ -36,7 +37,8 @@ app.get("/", (req, res) => {
 });
 
 //localhost:3000/api/v1/post/
-app.use("/api/v1/posts", postRouter)
+app.use("/api/v1/posts", postRouter);
+app.use("/api/v1/users", userRouter);
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`listening on port ${port}`));
